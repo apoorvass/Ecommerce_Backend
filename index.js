@@ -7,12 +7,13 @@ const port=3000
 
 app.use(cors())
 
-const db=mysql.createConnection({
-    host:'local host',
-    user:'root',
-    password:'',
-    database: 'ecommerce',
+const db = mysql.createConnection({
+  host:'localhost',
+  user:'root',
+  password:'',
+  database: 'ecommerce',
 });
+
 
 db.connect((err) => {
   if (err) {
@@ -37,18 +38,14 @@ app.post('/cars', (req, res) => {
         res.status(500).send('Internal Server Error');
         return;
       }
-
       console.log(results)
       res.json(results);
-      
     });
   }
 );
+
 
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)
 });
-
-
-
