@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 07, 2024 at 09:38 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Host: localhost:3306
+-- Generation Time: Jul 07, 2024 at 03:13 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -334,6 +334,37 @@ INSERT INTO `sports` (`id`, `name`, `description`, `price`, `ratings`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `top_products`
+--
+
+CREATE TABLE `top_products` (
+  `id` int(10) NOT NULL,
+  `product_image` varchar(500) NOT NULL,
+  `product_type` varchar(20) NOT NULL,
+  `product_name` varchar(20) NOT NULL,
+  `product_rating` int(10) NOT NULL,
+  `product_price` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `top_products`
+--
+
+INSERT INTO `top_products` (`id`, `product_image`, `product_type`, `product_name`, `product_rating`, `product_price`) VALUES
+(1, 'https://dukaan.b-cdn.net/700x700/webp/upload_file_service/5c3950d5-6e7c-4556-aa7d-a4d8a4163dc3/focus-on-843ff049-9aee-419c-b3eb-1c7c01abcc3b.png', 'clothes', 'T-Shirt', 5, 20),
+(2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_FeiYsB5dfxpYGWk_tF2THti4kB6-OvZyw&s', 'electronics', 'tablet', 5, 300),
+(3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReFfMBdR81L5wTN9EpJc4EXB996Ey_T4EsRw&s', 'footwears', 'Wedges', 4, 60),
+(4, 'https://www.jiomart.com/images/product/original/rvs5ljvnym/smaart-craafts-carving-solid-wood-bedside-table-premium-design-with-2-drawers-nightstand-cum-side-table-for-bedroom-home-kitchen-pure-mango-wood-with-natural-finish-product-images-orvs5ljvnym-p602715670-0-202306260820.jpg?im=Resize=(1000,1000)', 'furnituers', 'Nightstand', 4, 80),
+(5, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThRSXmqAvXWRFRSljEO5uEfXpT-sMb8-W57Q&s', 'groceries', 'Yogurt', 4, 3),
+(6, 'https://m.media-amazon.com/images/I/811QsTBqYvL.jpg', 'home_appliances', 'Coffee Maker', 4, 50),
+(7, 'https://m.media-amazon.com/images/I/91bYR71ls2L.jpg', 'mobiles', 'Samsung Galaxy S21', 4, 700),
+(8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTMee7_MtZZcYiaNQaaDBvmTg4ZAXW3n8g8Q&s', 'sports', 'Skateboard', 5, 60),
+(9, 'https://images-cdn.ubuy.co.in/6377de19770b183c831cd873-building-bricks-1000-pieces-basic.jpg', 'toys', 'Lego Set', 4, 60),
+(10, 'https://img.kwcdn.com/product/temu-avi/image-crop/da15a936-8a70-4117-8f10-6ac52f6c6d88.jpg', 'watches', 'Pocket Watch', 4, 60);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `toys`
 --
 
@@ -460,6 +491,12 @@ ALTER TABLE `sports`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `top_products`
+--
+ALTER TABLE `top_products`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `toys`
 --
 ALTER TABLE `toys`
@@ -486,6 +523,12 @@ ALTER TABLE `featuredcategories`
 --
 ALTER TABLE `sports`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `top_products`
+--
+ALTER TABLE `top_products`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
