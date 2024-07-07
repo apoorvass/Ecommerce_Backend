@@ -47,7 +47,7 @@ app.post('/featuredcategories', (req, res) => {
 );
 
 
-app.post('/top_products', (req, res) => {
+app.post('/topproducts', (req, res) => {
   let query = `SELECT * FROM top_products`;
   console.log(query);
     db.query(query, (err, results) => {
