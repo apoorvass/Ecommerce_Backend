@@ -28,9 +28,9 @@ app.use(express.json());
 
 
 // API Routes
-app.post('/cars', (req, res) => {
-  console.log(req.body.car)
-  let query = `SELECT * FROM featuredcars WHERE model='${req.body.car}`;
+
+app.post('/featuredcategories', (req, res) => {
+  let query = `SELECT * FROM featuredcategories`;
   console.log(query);
     db.query(query, (err, results) => {
    
@@ -38,12 +38,13 @@ app.post('/cars', (req, res) => {
         res.status(500).send('Internal Server Error');
         return;
       }
+
       console.log(results)
       res.json(results);
+      
     });
   }
 );
-
 
 // Start the server
 app.listen(port, () => {
