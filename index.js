@@ -50,3 +50,21 @@ app.post('/featuredcategories', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)
 });
+
+
+app.post('/top_products', (req, res) => {
+  let query = `SELECT * FROM top_products`;
+  console.log(query);
+    db.query(query, (err, results) => {
+   
+      if (err) {
+        res.status(500).send('Internal Server Error');
+        return;
+      }
+
+      console.log(results)
+      res.json(results);
+      
+    });
+  }
+);
