@@ -46,11 +46,6 @@ app.post('/featuredcategories', (req, res) => {
   }
 );
 
-// Start the server
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`)
-});
-
 
 app.post('/top_products', (req, res) => {
   let query = `SELECT * FROM top_products`;
@@ -68,3 +63,10 @@ app.post('/top_products', (req, res) => {
     });
   }
 );
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`)
+});
+
+
