@@ -362,7 +362,7 @@ INSERT INTO `watches` (`id`, `name`, `description`, `price`, `ratings`) VALUES
 (4, 'Chronograph Watch', 'Chronograph sports watch', 149.99, '4.4'),
 (5, 'Dress Watch', 'Elegant dress watch', 199.99, '4.6'),
 (6, 'Diving Watch', 'Waterproof diving watch', 249.99, '4.7'),
-(7, 'Aviator Watch', 'Pilot\'s aviator watch', 299.99, '4.8'),
+(7, 'Aviator Watch', 'Pilots aviator watch', 299.99, '4.8'),
 (8, 'Skeleton Watch', 'Mechanical skeleton watch', 399.99, '4.9'),
 (9, 'Field Watch', 'Durable field watch', 99.99, '4.2'),
 (10, 'Hybrid Smartwatch', 'Hybrid analog smartwatch', 179.99, '4.3'),
