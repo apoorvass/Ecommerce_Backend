@@ -65,8 +65,6 @@ app.post('/topproducts', (req, res) => {
 );
 
 
-
-
 app.post('/Furnituers', (req, res) => {
   let query = `SELECT * FROM furnituers`;
   console.log(query);
@@ -240,7 +238,7 @@ app.post('/Sports', (req, res) => {
       }
 
       console.log(results)
-      res.json(results);
+      res.json(results);0
       
     });
   }
