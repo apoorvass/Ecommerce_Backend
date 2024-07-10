@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2024 at 04:58 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Generation Time: Jul 10, 2024 at 01:44 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -112,16 +112,16 @@ CREATE TABLE `featuredcategories` (
 --
 
 INSERT INTO `featuredcategories` (`id`, `images`, `name`, `quantity`) VALUES
-(1, 'https://t4.ftcdn.net/jpg/04/23/65/57/360_F_423655780_VSZ03nlUy0s1RP39cRWUHLj2bbWi2ebO.jpg', 'Furnituers', '15 Items'),
-(2, 'https://img.freepik.com/premium-photo/summer-collection-men-clothes-set-with-checkered-shirt-jeans-shoes-belt-isolated-white-background_142957-1103.jpg', 'Clothes', '15 Items'),
-(3, 'https://static.vecteezy.com/system/resources/previews/007/763/838/non_2x/pair-of-new-running-shoes-isolated-on-white-background-black-sneakers-breathable-fabric-sport-shoes-with-high-abrasion-rubber-outsole-footwear-of-gym-trainer-light-and-comfortable-running-shoes-photo.jpg', 'Footwears', '15 Items'),
-(4, 'https://st2.depositphotos.com/1001877/5813/i/950/depositphotos_58139017-stock-photo-home-appliances-set-of-household.jpg', 'Home Appliances', '15 Items'),
-(5, 'https://media.istockphoto.com/id/458620587/photo/macbook-air.jpg?s=612x612&w=0&k=20&c=ceMHCHRAsRjUJ4DCqy_zNd_tMvR0gC_wENixJCHo9eo=', 'Electronics', '15 Items'),
-(6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAZq6556KDGk9qClH8fGB-MTOLpn_3HrdeiA&s', 'Watches', '15 Items'),
-(7, 'https://img.freepik.com/premium-photo/children-s-toys-white-background_168508-619.jpg', 'Toys', '15 Items'),
-(8, 'https://p.kindpng.com/picc/s/205-2053317_transparent-grocery-shopping-clipart-grocery-bag-transparent-background.png', 'Grocery', '15 Items'),
-(9, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnhPygrYOkIT9cwZegu1yPE7ZlRHvVUAft_NWyf_6B-da5jP-TmcNko7R4SK8pc58RDaU&usqp=CAU', 'Mobiles', '15 Items'),
-(10, 'https://media.istockphoto.com/id/146863459/photo/sports-objects.jpg?s=612x612&w=0&k=20&c=AKm_AV9Ghq5kqatAKWnzBvBmCSfr7hMjf9KvTTLtN70=', 'Sports', '15 Items');
+(1, 'https://t4.ftcdn.net/jpg/04/23/65/57/360_F_423655780_VSZ03nlUy0s1RP39cRWUHLj2bbWi2ebO.jpg', 'furnituers', '15 Items'),
+(2, 'https://img.freepik.com/premium-photo/summer-collection-men-clothes-set-with-checkered-shirt-jeans-shoes-belt-isolated-white-background_142957-1103.jpg', 'clothes', '15 Items'),
+(3, 'https://static.vecteezy.com/system/resources/previews/007/763/838/non_2x/pair-of-new-running-shoes-isolated-on-white-background-black-sneakers-breathable-fabric-sport-shoes-with-high-abrasion-rubber-outsole-footwear-of-gym-trainer-light-and-comfortable-running-shoes-photo.jpg', 'footwears', '15 Items'),
+(4, 'https://st2.depositphotos.com/1001877/5813/i/950/depositphotos_58139017-stock-photo-home-appliances-set-of-household.jpg', 'home_appliances', '15 Items'),
+(5, 'https://media.istockphoto.com/id/458620587/photo/macbook-air.jpg?s=612x612&w=0&k=20&c=ceMHCHRAsRjUJ4DCqy_zNd_tMvR0gC_wENixJCHo9eo=', 'electronics', '15 Items'),
+(6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAZq6556KDGk9qClH8fGB-MTOLpn_3HrdeiA&s', 'watches', '15 Items'),
+(7, 'https://img.freepik.com/premium-photo/children-s-toys-white-background_168508-619.jpg', 'toys', '15 Items'),
+(8, 'https://p.kindpng.com/picc/s/205-2053317_transparent-grocery-shopping-clipart-grocery-bag-transparent-background.png', 'groceries', '15 Items'),
+(9, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnhPygrYOkIT9cwZegu1yPE7ZlRHvVUAft_NWyf_6B-da5jP-TmcNko7R4SK8pc58RDaU&usqp=CAU', 'mobiles', '15 Items'),
+(10, 'https://media.istockphoto.com/id/146863459/photo/sports-objects.jpg?s=612x612&w=0&k=20&c=AKm_AV9Ghq5kqatAKWnzBvBmCSfr7hMjf9KvTTLtN70=', 'sports', '15 Items');
 
 -- --------------------------------------------------------
 
