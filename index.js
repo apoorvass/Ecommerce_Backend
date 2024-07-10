@@ -65,6 +65,23 @@ app.post('/topproducts', (req, res) => {
 );
 
 
+app.post('/categoryproducts', (req, res) => {
+  let category = req.body
+  let query = `SELECT * FROM ?`;
+  console.log(query);
+    db.query(query,[category], (err, results) => {
+   
+      if (err) {
+        res.status(500).send('Internal Server Error');
+        return;
+      }
+
+      console.log(results)
+      res.json(results);
+      
+    });
+  }
+);
 
 
 app.post('/Furnituers', (req, res) => {
