@@ -65,6 +65,8 @@ app.post('/topproducts', (req, res) => {
 );
 
 
+
+
 app.post('/Furnituers', (req, res) => {
   let query = `SELECT * FROM furnituers`;
   console.log(query);
@@ -238,7 +240,7 @@ app.post('/Sports', (req, res) => {
       }
 
       console.log(results)
-      res.json(results);0
+      res.json(results);
       
     });
   }
@@ -248,5 +250,3 @@ app.post('/Sports', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)
 });
-
-
