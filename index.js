@@ -85,9 +85,9 @@ app.post('/categoryproducts', (req, res) => {
 
 app.post('/products', (req, res) => {
 
-  let {id} = req.body.id
+  let {id ,category} = req.body
 
-  let query = `SELECT * FROM furnituers where id=${id}` ;
+  let query = `SELECT * FROM ${category} where id=${id}` ;
   console.log(query);
     db.query(query, (err, results) => {
       if (err) {
