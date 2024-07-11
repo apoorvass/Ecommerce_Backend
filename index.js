@@ -102,7 +102,7 @@ app.post('/products', (req, res) => {
 
 app.post('/signup', (req, res) => {
   let {fullname, email, password} = req.body;
-  let query = `INSERT INTO signup(fullname,email,password)  VALUES (${fullname},${email}, ${password}])`;
+  let query = `INSERT INTO signup(fullname,email,password) VALUES ('${fullname}','${email}', '${password}')`;
   console.log(query);
     db.query(query, (err, results) => {
    
