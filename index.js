@@ -118,6 +118,45 @@ app.post('/signup', (req, res) => {
   }
 );
 
+app.post('/login', (req, res) => {
+  let {email, password} = req.body;
+  let query = `SELECT * FROM signup where email= '${email}' AND password= '${password}';`
+  console.log(query);
+    db.query(query, (err, results) => {
+      if (err) {
+        console.error('Error Fetching data:', err);
+        return;
+      }
+      
+      if (results.length > 0) {
+        return res.status(200).send({ message: 'Login Successfull'});
+      } else {
+        return res.status(401).send({ message: 'Incorrect ID or Password'});
+      }
+      console.log(results);
+    });
+  }
+);
+
+app.post('/contact', (req, res) => {
+  let {email, subject, message} = req.body;
+  let query = `INSERT INTO contact(email,subject,message) VALUES ('${email}','${subject}', '${message}')`;
+  console.log(query);
+    db.query(query, (err, results) => {
+   
+      if (err) {
+        res.status(500).send('Internal Server Error');
+        return;
+      }
+
+      console.log(results)
+      res.json(results);
+      
+    });
+  }
+);
+
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)
