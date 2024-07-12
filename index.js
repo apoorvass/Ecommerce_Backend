@@ -118,26 +118,6 @@ app.post('/signup', (req, res) => {
   }
 );
 
-// app.post('/login', (req, res) => {
-//   let {email, password} = req.body;
-//   let query = `SELECT * FROM signup where email='${email}' AND password='${password}'`;
-
-//   console.log(query);
-//     db.query(query,(err, results) => {
-//       if (err) {
-//         console.error('Error Fetching data:', err);
-//         return;
-//       }
-      
-//       if (results.length > 0) {
-//         return res.status(200).send({ message: 'Login Successfull'});
-//       } else {
-//         return res.status(401).send({ message: 'Incorrect ID or Password'});
-//       }
-//       console.log(results);
-//     });
-//   }
-// );
 
 app.post('/login', (req, res) => {
   let {email, password} = req.body;
@@ -156,7 +136,6 @@ app.post('/login', (req, res) => {
     }
   });
 });
-
 
 
 app.post('/contact', (req, res) => {
