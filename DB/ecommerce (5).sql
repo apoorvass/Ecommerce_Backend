@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2024 at 06:00 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Generation Time: Jul 13, 2024 at 11:37 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,42 @@ SET time_zone = "+00:00";
 --
 -- Database: `ecommerce`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `appliances`
+--
+
+CREATE TABLE `appliances` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `ratings` varchar(5) NOT NULL,
+  `images` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `appliances`
+--
+
+INSERT INTO `appliances` (`id`, `name`, `description`, `price`, `ratings`, `images`) VALUES
+(1, 'Refrigerator', 'Double door fridge', 699.99, '4.7', 'https://image.made-in-china.com/2f0j00hUFfGIWPqCgp/Side-by-Side-Double-Door-Refrigerator-No-Frost-Fridge-with-Ice-Maker.webp'),
+(2, 'Washing Machine', 'Front load washing machine', 499.99, '4.6', 'https://m.media-amazon.com/images/I/51igvNDFZeL._AC_UF1000,1000_QL80_.jpg'),
+(3, 'Microwave Oven', '800W microwave oven', 99.99, '4.3', 'https://res.cloudinary.com/sharp-consumer-eu/image/fetch/w_1100,f_auto,q_auto/https://s3.infra.brandquad.io/accounts-media/SHRP/DAM/origin/5a23fb26-685f-11ea-b0f2-3ea14acccbd3.jpg'),
+(4, 'Air Conditioner', '1.5 ton split AC', 299.99, '4.5', 'https://www.jiomart.com/images/product/original/581110663/lloyd-1-5-ton-5-star-wifi-inverter-split-ac-gls18v5fwcxv-4-way-swing-golden-fins-evaporator-coils-100-copper-2024-launch-digital-o581110663-p607715659-2-202402021710.jpeg?im=Resize=(420,420)'),
+(5, 'Vacuum Cleaner', 'Cordless vacuum cleaner', 149.99, '4.4', 'https://images.philips.com/is/image/philipsconsumer/vrs_5f84f3e82b5eb0cfb83ba03f690fca45925b1f01?fit=fit&hei=300&wid=250&$jpglarge$'),
+(6, 'Dishwasher', 'Built-in dishwasher', 399.99, '4.7', 'https://glenindia.com/cdn/shop/products/13_c59814de-f7f4-4aa7-90dc-442236397361_700x700.jpg?v=1633421377'),
+(7, 'Toaster', '2-slice toaster', 29.99, '4.0', 'https://images-cdn.ubuy.co.in/654303df7d9a4319292aae3b-hamilton-beach-2-slice-toaster.jpg'),
+(8, 'Blender', 'High-speed blender', 79.99, '4.2', 'https://images-cdn.ubuy.co.in/64c1025228807b394c51e537-ninja-twisti-high-speed-blender.jpg'),
+(9, 'Coffee Maker', '12-cup coffee maker', 49.99, '4.1', 'https://appliancesblackanddecker.in/cdn/shop/files/BXCM1201IN_2.webp?v=1689407531&width=1445'),
+(10, 'Water Heater', 'Instant water heater', 99.99, '4.3', 'https://faberindia.com/cdn/shop/products/FWGINSTA3L.jpg?v=1658921404'),
+(11, 'Air Purifier', 'HEPA air purifier', 199.99, '4.6', 'https://m.media-amazon.com/images/I/61edPHS+x-L.jpg'),
+(12, 'Iron', 'Steam iron', 39.99, '4.0', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8Y5unvYUiuM0CyBgYg_Ne5X0cL-VbCIe5g&s'),
+(13, 'Electric Kettle', '1.7L electric kettle', 29.99, '4.1', 'https://khuranasmart.com/media/2021/11/Bajaj-Majesty-KTX-15-1.7L-Electric-Kettle1.jpg'),
+(14, 'Slow Cooker', '6-quart slow cooker', 59.99, '4.5', 'https://m.media-amazon.com/images/I/81XW3jujTDL.jpg'),
+(15, 'Food Processor', 'Multi-functional food processor', 129.99, '4.8', 'https://m.media-amazon.com/images/I/81N-TfwA14L._AC_UF894,1000_QL80_.jpg');
 
 -- --------------------------------------------------------
 
@@ -57,6 +93,19 @@ INSERT INTO `clothes` (`id`, `name`, `description`, `price`, `gender`, `ratings`
 (13, 'Tank Top', 'Basic tank top', 14.99, 'Unisex', '4.2', 'https://assets.ajio.com/medias/sys_master/root/20240703/gjsJ/66850a3f6f60443f31358bf6/-473Wx593H-465507028-yellow-MODEL3.jpg'),
 (14, 'Leggings', 'High waist leggings', 24.99, 'Women', '4.3', 'https://c.bflcdn.com/t_pm/f_auto,q_auto/products/23/12/5904841823444_BTM_3.JPG'),
 (15, 'Cardigan', 'Button-down cardigan', 34.99, 'Women', '4.5', 'https://assets.ajio.com/medias/sys_master/root/20240628/Pr5H/667e10c96f60443f31dc2b28/-473Wx593H-465144066-black-MODEL.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(100) NOT NULL,
+  `email` varchar(500) NOT NULL,
+  `subject` varchar(500) NOT NULL,
+  `message` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -115,12 +164,12 @@ INSERT INTO `featuredcategories` (`id`, `images`, `name`, `quantity`) VALUES
 (1, 'https://t4.ftcdn.net/jpg/04/23/65/57/360_F_423655780_VSZ03nlUy0s1RP39cRWUHLj2bbWi2ebO.jpg', 'furnituers', '15 Items'),
 (2, 'https://img.freepik.com/premium-photo/summer-collection-men-clothes-set-with-checkered-shirt-jeans-shoes-belt-isolated-white-background_142957-1103.jpg', 'clothes', '15 Items'),
 (3, 'https://static.vecteezy.com/system/resources/previews/007/763/838/non_2x/pair-of-new-running-shoes-isolated-on-white-background-black-sneakers-breathable-fabric-sport-shoes-with-high-abrasion-rubber-outsole-footwear-of-gym-trainer-light-and-comfortable-running-shoes-photo.jpg', 'footwears', '15 Items'),
-(4, 'https://st2.depositphotos.com/1001877/5813/i/950/depositphotos_58139017-stock-photo-home-appliances-set-of-household.jpg', 'home_appliances', '15 Items'),
+(4, 'https://st2.depositphotos.com/1001877/5813/i/950/depositphotos_58139017-stock-photo-home-appliances-set-of-household.jpg', 'appliances', '15 Items'),
 (5, 'https://media.istockphoto.com/id/458620587/photo/macbook-air.jpg?s=612x612&w=0&k=20&c=ceMHCHRAsRjUJ4DCqy_zNd_tMvR0gC_wENixJCHo9eo=', 'electronics', '15 Items'),
 (6, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAZq6556KDGk9qClH8fGB-MTOLpn_3HrdeiA&s', 'watches', '15 Items'),
 (7, 'https://img.freepik.com/premium-photo/children-s-toys-white-background_168508-619.jpg', 'toys', '15 Items'),
-(8, 'https://p.kindpng.com/picc/s/205-2053317_transparent-grocery-shopping-clipart-grocery-bag-transparent-background.png', 'groceries', '15 Items'),
-(9, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnhPygrYOkIT9cwZegu1yPE7ZlRHvVUAft_NWyf_6B-da5jP-TmcNko7R4SK8pc58RDaU&usqp=CAU', 'mobiles', '15 Items'),
+(8, 'https://www.pngall.com/wp-content/uploads/4/Grocery-PNG-Picture.png', 'groceries', '15 Items'),
+(9, 'https://www.pngmart.com/files/15/Apple-iPhone-11-PNG-Image.png', 'mobiles', '15 Items'),
 (10, 'https://media.istockphoto.com/id/146863459/photo/sports-objects.jpg?s=612x612&w=0&k=20&c=AKm_AV9Ghq5kqatAKWnzBvBmCSfr7hMjf9KvTTLtN70=', 'sports', '15 Items');
 
 -- --------------------------------------------------------
@@ -234,38 +283,21 @@ INSERT INTO `groceries` (`id`, `name`, `description`, `price`, `ratings`, `image
 -- --------------------------------------------------------
 
 --
--- Table structure for table `home_appliances`
+-- Table structure for table `login`
 --
 
-CREATE TABLE `home_appliances` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `price` decimal(10,2) NOT NULL,
-  `ratings` varchar(5) NOT NULL,
-  `images` varchar(1000) NOT NULL
+CREATE TABLE `login` (
+  `id` int(2) NOT NULL,
+  `email` varchar(500) NOT NULL,
+  `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `home_appliances`
+-- Dumping data for table `login`
 --
 
-INSERT INTO `home_appliances` (`id`, `name`, `description`, `price`, `ratings`, `images`) VALUES
-(1, 'Refrigerator', 'Double door fridge', 699.99, '4.7', 'https://image.made-in-china.com/2f0j00hUFfGIWPqCgp/Side-by-Side-Double-Door-Refrigerator-No-Frost-Fridge-with-Ice-Maker.webp'),
-(2, 'Washing Machine', 'Front load washing machine', 499.99, '4.6', 'https://m.media-amazon.com/images/I/51igvNDFZeL._AC_UF1000,1000_QL80_.jpg'),
-(3, 'Microwave Oven', '800W microwave oven', 99.99, '4.3', 'https://res.cloudinary.com/sharp-consumer-eu/image/fetch/w_1100,f_auto,q_auto/https://s3.infra.brandquad.io/accounts-media/SHRP/DAM/origin/5a23fb26-685f-11ea-b0f2-3ea14acccbd3.jpg'),
-(4, 'Air Conditioner', '1.5 ton split AC', 299.99, '4.5', 'https://www.jiomart.com/images/product/original/581110663/lloyd-1-5-ton-5-star-wifi-inverter-split-ac-gls18v5fwcxv-4-way-swing-golden-fins-evaporator-coils-100-copper-2024-launch-digital-o581110663-p607715659-2-202402021710.jpeg?im=Resize=(420,420)'),
-(5, 'Vacuum Cleaner', 'Cordless vacuum cleaner', 149.99, '4.4', 'https://images.philips.com/is/image/philipsconsumer/vrs_5f84f3e82b5eb0cfb83ba03f690fca45925b1f01?fit=fit&hei=300&wid=250&$jpglarge$'),
-(6, 'Dishwasher', 'Built-in dishwasher', 399.99, '4.7', 'https://glenindia.com/cdn/shop/products/13_c59814de-f7f4-4aa7-90dc-442236397361_700x700.jpg?v=1633421377'),
-(7, 'Toaster', '2-slice toaster', 29.99, '4.0', 'https://images-cdn.ubuy.co.in/654303df7d9a4319292aae3b-hamilton-beach-2-slice-toaster.jpg'),
-(8, 'Blender', 'High-speed blender', 79.99, '4.2', 'https://images-cdn.ubuy.co.in/64c1025228807b394c51e537-ninja-twisti-high-speed-blender.jpg'),
-(9, 'Coffee Maker', '12-cup coffee maker', 49.99, '4.1', 'https://appliancesblackanddecker.in/cdn/shop/files/BXCM1201IN_2.webp?v=1689407531&width=1445'),
-(10, 'Water Heater', 'Instant water heater', 99.99, '4.3', 'https://faberindia.com/cdn/shop/products/FWGINSTA3L.jpg?v=1658921404'),
-(11, 'Air Purifier', 'HEPA air purifier', 199.99, '4.6', 'https://m.media-amazon.com/images/I/61edPHS+x-L.jpg'),
-(12, 'Iron', 'Steam iron', 39.99, '4.0', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn8Y5unvYUiuM0CyBgYg_Ne5X0cL-VbCIe5g&s'),
-(13, 'Electric Kettle', '1.7L electric kettle', 29.99, '4.1', 'https://khuranasmart.com/media/2021/11/Bajaj-Majesty-KTX-15-1.7L-Electric-Kettle1.jpg'),
-(14, 'Slow Cooker', '6-quart slow cooker', 59.99, '4.5', 'https://m.media-amazon.com/images/I/81XW3jujTDL.jpg'),
-(15, 'Food Processor', 'Multi-functional food processor', 129.99, '4.8', 'https://m.media-amazon.com/images/I/81N-TfwA14L._AC_UF894,1000_QL80_.jpg');
+INSERT INTO `login` (`id`, `email`, `password`) VALUES
+(1, 'aa', 'aaa');
 
 -- --------------------------------------------------------
 
@@ -302,6 +334,28 @@ INSERT INTO `mobiles` (`id`, `name`, `description`, `price`, `ratings`, `images`
 (13, 'Realme GT', 'Realme GT with 256GB storage', 499.99, '4.1', 'https://m.media-amazon.com/images/I/71ftthp966L.jpg'),
 (14, 'Vivo X60', 'Vivo X60 with 256GB storage', 649.99, '4.3', 'https://5.imimg.com/data5/ECOM/Default/2023/12/372078755/VN/FY/OJ/47699750/8kpqrglwk2-34cf3714-1a32-4be9-a4cc-c623e7fc0d41-500x500.jpg'),
 (15, 'Lenovo Legion Duel 2', 'Lenovo Legion Duel 2 with 512GB storage', 1199.99, '4.8', 'https://www.gizmochina.com/wp-content/uploads/2021/04/cats-7.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `signup`
+--
+
+CREATE TABLE `signup` (
+  `id` int(2) NOT NULL,
+  `fullname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `signup`
+--
+
+INSERT INTO `signup` (`id`, `fullname`, `email`, `password`) VALUES
+(1, 'a', 'a', 'a'),
+(2, 'a', 'aa', 'aaa'),
+(3, 'anusha', 'anusha@gmail.com', 'anu@123');
 
 -- --------------------------------------------------------
 
@@ -360,15 +414,15 @@ CREATE TABLE `top_products` (
 
 INSERT INTO `top_products` (`id`, `product_image`, `product_type`, `product_name`, `product_rating`, `product_price`) VALUES
 (1, 'https://dukaan.b-cdn.net/700x700/webp/upload_file_service/5c3950d5-6e7c-4556-aa7d-a4d8a4163dc3/focus-on-843ff049-9aee-419c-b3eb-1c7c01abcc3b.png', 'clothes', 'T-Shirt', 5, 20),
-(2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_FeiYsB5dfxpYGWk_tF2THti4kB6-OvZyw&s', 'electronics', 'tablet', 5, 300),
-(3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReFfMBdR81L5wTN9EpJc4EXB996Ey_T4EsRw&s', 'footwears', 'Wedges', 4, 60),
-(4, 'https://www.jiomart.com/images/product/original/rvs5ljvnym/smaart-craafts-carving-solid-wood-bedside-table-premium-design-with-2-drawers-nightstand-cum-side-table-for-bedroom-home-kitchen-pure-mango-wood-with-natural-finish-product-images-orvs5ljvnym-p602715670-0-202306260820.jpg?im=Resize=(1000,1000)', 'furnituers', 'Nightstand', 4, 80),
-(5, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThRSXmqAvXWRFRSljEO5uEfXpT-sMb8-W57Q&s', 'groceries', 'Yogurt', 4, 3),
-(6, 'https://m.media-amazon.com/images/I/811QsTBqYvL.jpg', 'home_appliances', 'Coffee Maker', 4, 50),
-(7, 'https://m.media-amazon.com/images/I/91bYR71ls2L.jpg', 'mobiles', 'Samsung Galaxy S21', 4, 700),
-(8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTMee7_MtZZcYiaNQaaDBvmTg4ZAXW3n8g8Q&s', 'sports', 'Skateboard', 5, 60),
-(9, 'https://images-cdn.ubuy.co.in/6377de19770b183c831cd873-building-bricks-1000-pieces-basic.jpg', 'toys', 'Lego Set', 4, 60),
-(10, 'https://img.kwcdn.com/product/temu-avi/image-crop/da15a936-8a70-4117-8f10-6ac52f6c6d88.jpg', 'watches', 'Pocket Watch', 4, 60);
+(2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_FeiYsB5dfxpYGWk_tF2THti4kB6-OvZyw&s', 'electronics', 'Tablet', 5, 300),
+(3, 'https://i.etsystatic.com/42020760/c/2000/2000/0/289/il/02debb/5434238205/il_300x300.5434238205_p6nk.jpg', 'footwears', 'Sandals', 4, 60),
+(4, 'https://m.media-amazon.com/images/I/91Bttn2sHzL._AC_UF894,1000_QL80_.jpg', 'furnituers', 'Coffee Table', 4, 80),
+(5, 'https://totalfoods.in/static/uploads/product_image/Frozen_Chicken_Breast_Boneless__Frozen_32922565.jpg', 'groceries', 'Chicken Breast', 4, 3),
+(6, 'https://glenindia.com/cdn/shop/products/13_c59814de-f7f4-4aa7-90dc-442236397361_700x700.jpg?v=1633421377', 'home_appliances', 'Dishwasher', 4, 50),
+(7, 'https://m.media-amazon.com/images/I/417UY5sPvtL.jpg', 'mobiles', 'Oppo Find X3', 4, 700),
+(8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjYNijifvEN5vydo69-BRa_TsygjJij3k9PA&s', 'sports', 'Baseball Glove', 5, 60),
+(9, 'https://m.media-amazon.com/images/I/71lvPK1JixL._AC_UF1000,1000_QL80_.jpg', 'toys', 'Doll', 4, 60),
+(10, 'https://m.media-amazon.com/images/I/812fbL24cCL._AC_UY1000_.jpg', 'watches', 'Hybrid Smartwatch', 4, 60);
 
 -- --------------------------------------------------------
 
@@ -447,9 +501,21 @@ INSERT INTO `watches` (`id`, `name`, `description`, `price`, `ratings`, `images`
 --
 
 --
+-- Indexes for table `appliances`
+--
+ALTER TABLE `appliances`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `clothes`
 --
 ALTER TABLE `clothes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -483,15 +549,21 @@ ALTER TABLE `groceries`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `home_appliances`
+-- Indexes for table `login`
 --
-ALTER TABLE `home_appliances`
+ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `mobiles`
 --
 ALTER TABLE `mobiles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `signup`
+--
+ALTER TABLE `signup`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -523,10 +595,28 @@ ALTER TABLE `watches`
 --
 
 --
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `featuredcategories`
 --
 ALTER TABLE `featuredcategories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `signup`
+--
+ALTER TABLE `signup`
+  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sports`
