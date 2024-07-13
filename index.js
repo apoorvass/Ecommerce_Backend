@@ -89,6 +89,7 @@ app.post('/products', (req, res) => {
 
   let query = `SELECT * FROM ${category} where id=${id}` ;
   console.log(query);
+
     db.query(query, (err, results) => {
       if (err) {
         res.status(500).send('Internal Server Error');
@@ -134,6 +135,7 @@ app.post('/login', (req, res) => {
     } else {
       return res.status(401).send({ message: 'Incorrect ID or Password' });
     }
+    console.log(results);
   });
 });
 
@@ -161,3 +163,5 @@ app.post('/contact', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`)
 });
+
+
