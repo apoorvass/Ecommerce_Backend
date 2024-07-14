@@ -103,7 +103,7 @@ app.post('/products', (req, res) => {
 
 app.post('/relatedproducts', (req, res) => {
   let {category} = req.body
-  let query = `SELECT * FROM ${category} ORDER BY RAND() LIMIT 4;`;
+  let query = `SELECT * FROM ${category} ORDER BY RAND() LIMIT 5;`;
   console.log(query);
     db.query(query, (err, results) => {
    
