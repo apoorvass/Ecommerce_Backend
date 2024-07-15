@@ -122,7 +122,7 @@ app.post('/relatedproducts', (req, res) => {
 
 app.post('/search', (req, res) => {
   let {searchquery} = req.body
-  let query = ` SELECT * FROM all_products WHERE category LIKE '%${searchquery}%' OR name LIKE '%${searchquery}%' `;
+  let query = ` SELECT DISTINCT * FROM all_products WHERE category LIKE '%${searchquery}%' OR name LIKE '%${searchquery}%' `;
   console.log(query);
     db.query(query, (err, results) => {
    

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2024 at 05:17 PM
+-- Generation Time: Jul 15, 2024 at 04:32 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -28,6 +28,13 @@ SET time_zone = "+00:00";
 -- (See below for the actual view)
 --
 CREATE TABLE `all_products` (
+`category` varchar(11)
+,`id` int(11)
+,`name` varchar(255)
+,`description` mediumtext
+,`price` decimal(10,2)
+,`ratings` varchar(5)
+,`images` varchar(1500)
 );
 
 -- --------------------------------------------------------
@@ -89,6 +96,7 @@ CREATE TABLE `checkout` (
 --
 
 INSERT INTO `checkout` (`id`, `name`, `email`, `country`, `city`, `pincode`, `mobile`, `address`, `voucher`) VALUES
+(0, 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', 0, 'undefined', 'undefined'),
 (1, 'aa', 'aaa', 'india', 'rnr', '581115', 1234567890, 'yghjHBhdavsdh', 'hsdfigrighj'),
 (2, 'aa', 'aaa', 'india', 'rnr', '581115', 1234567890, 'yghjHBhdavsdh', 'hsdfigrighj'),
 (3, 'aa', 'aa@gmail.com', 'india', 'rnr', '581115', 1234567890, 'yghjHBhdavsdh', 'hsdfigrighj'),
@@ -397,6 +405,10 @@ INSERT INTO `signup` (`id`, `fullname`, `email`, `password`) VALUES
 (1, 'a', 'a', 'a'),
 (2, 'a', 'aa', 'aaa'),
 (3, 'anusha', 'anusha@gmail.com', 'anu@123'),
+(4, 'rakshita', 'rakshitaashoknadiger@gmail.com', 'rak123'),
+(1, 'a', 'a', 'a'),
+(2, 'a', 'aa', 'aaa'),
+(3, 'anusha', 'anusha@gmail.com', 'anu@123'),
 (4, 'rakshita', 'rakshitaashoknadiger@gmail.com', 'rak123');
 
 -- --------------------------------------------------------
@@ -447,24 +459,25 @@ CREATE TABLE `top_products` (
   `product_type` varchar(20) NOT NULL,
   `product_name` varchar(20) NOT NULL,
   `product_rating` int(10) NOT NULL,
-  `product_price` int(10) NOT NULL
+  `product_price` int(10) NOT NULL,
+  `a` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `top_products`
 --
 
-INSERT INTO `top_products` (`id`, `product_image`, `product_type`, `product_name`, `product_rating`, `product_price`) VALUES
-(1, 'https://dukaan.b-cdn.net/700x700/webp/upload_file_service/5c3950d5-6e7c-4556-aa7d-a4d8a4163dc3/focus-on-843ff049-9aee-419c-b3eb-1c7c01abcc3b.png', 'clothes', 'T-Shirt', 5, 399),
-(2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_FeiYsB5dfxpYGWk_tF2THti4kB6-OvZyw&s', 'electronics', 'Tablet', 5, 12000),
-(3, 'https://i.etsystatic.com/42020760/c/2000/2000/0/289/il/02debb/5434238205/il_300x300.5434238205_p6nk.jpg', 'footwears', 'Sandals', 4, 599),
-(4, 'https://m.media-amazon.com/images/I/91Bttn2sHzL._AC_UF894,1000_QL80_.jpg', 'furnituers', 'Coffee Table', 4, 4700),
-(5, 'https://totalfoods.in/static/uploads/product_image/Frozen_Chicken_Breast_Boneless__Frozen_32922565.jpg', 'groceries', 'Chicken Breast', 4, 230),
-(6, 'https://glenindia.com/cdn/shop/products/13_c59814de-f7f4-4aa7-90dc-442236397361_700x700.jpg?v=1633421377', 'home_appliances', 'Dishwasher', 4, 65000),
-(7, 'https://m.media-amazon.com/images/I/417UY5sPvtL.jpg', 'mobiles', 'Oppo Find X3', 4, 28960),
-(8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjYNijifvEN5vydo69-BRa_TsygjJij3k9PA&s', 'sports', 'Baseball Glove', 5, 945),
-(9, 'https://m.media-amazon.com/images/I/71lvPK1JixL._AC_UF1000,1000_QL80_.jpg', 'toys', 'Doll', 4, 1199),
-(10, 'https://m.media-amazon.com/images/I/812fbL24cCL._AC_UY1000_.jpg', 'watches', 'Hybrid Smartwatch', 4, 7299);
+INSERT INTO `top_products` (`id`, `product_image`, `product_type`, `product_name`, `product_rating`, `product_price`, `a`) VALUES
+(1, 'https://img.tatacliq.com/images/i13/437Wx649H/MP000000018915491_437Wx649H_202308252248521.jpeg', 'clothes', 'T-Shirt', 5, 399, 1),
+(2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_FeiYsB5dfxpYGWk_tF2THti4kB6-OvZyw&s', 'electronics', 'Tablet', 5, 12000, 2),
+(3, 'https://i.etsystatic.com/42020760/c/2000/2000/0/289/il/02debb/5434238205/il_300x300.5434238205_p6nk.jpg', 'footwears', 'Sandals', 4, 599, 3),
+(4, 'https://m.media-amazon.com/images/I/91Bttn2sHzL._AC_UF894,1000_QL80_.jpg', 'furnituers', 'Coffee Table', 4, 4700, 4),
+(5, 'https://totalfoods.in/static/uploads/product_image/Frozen_Chicken_Breast_Boneless__Frozen_32922565.jpg', 'groceries', 'Chicken Breast', 4, 230, 5),
+(6, 'https://glenindia.com/cdn/shop/products/13_c59814de-f7f4-4aa7-90dc-442236397361_700x700.jpg?v=1633421377', 'home_appliances', 'Dishwasher', 4, 65000, 6),
+(7, 'https://m.media-amazon.com/images/I/417UY5sPvtL.jpg', 'mobiles', 'Oppo Find X3', 4, 28960, 7),
+(8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjYNijifvEN5vydo69-BRa_TsygjJij3k9PA&s', 'sports', 'Baseball Glove', 5, 945, 8),
+(9, 'https://m.media-amazon.com/images/I/71lvPK1JixL._AC_UF1000,1000_QL80_.jpg', 'toys', 'Doll', 4, 1199, 9),
+(10, 'https://m.media-amazon.com/images/I/812fbL24cCL._AC_UY1000_.jpg', 'watches', 'Hybrid Smartwatch', 4, 7299, 10);
 
 -- --------------------------------------------------------
 
@@ -478,29 +491,30 @@ CREATE TABLE `toys` (
   `description` text NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `ratings` varchar(5) NOT NULL,
-  `images` varchar(1500) NOT NULL
+  `images` varchar(1500) NOT NULL,
+  `a` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `toys`
 --
 
-INSERT INTO `toys` (`id`, `name`, `description`, `price`, `ratings`, `images`) VALUES
-(1, 'Action Figure', 'Superhero action figure', 987.00, '4.2', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROJ7gTb2lWG1E9GtKpVm5s11AEkmR_vEPq9g&s'),
-(2, 'Dollhouse', 'Wooden dollhouse with furniture', 5900.00, '4.5', 'https://images-cdn.ubuy.co.in/6531a317617d2c45324fb71f-giant-bean-wooden-dollhouse-2-6-feet.jpg'),
-(3, 'Puzzle', '1000-piece jigsaw puzzle', 899.00, '4.0', 'https://www.alljigsawpuzzles.co.uk/cdn/shop/products/68df69ed-e863-4fdb-8f0a-eaed53f72386.jpg?v=1657722402'),
-(4, 'Board Game', 'Classic strategy board game', 1399.00, '4.1', 'https://m.media-amazon.com/images/I/71DpaXXN7wL._AC_UF1000,1000_QL80_.jpg'),
-(5, 'Lego Set', 'Building block lego set', 3300.00, '4.3', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvvJGpOEHbcVbKnxbGA9jK9-AWWECvokIn9A&s'),
-(6, 'RC Car', 'Remote control car', 2099.00, '4.0', 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExMWFRUXFRcaFRYYGRoaGBcaGBcaFxgYGhofHSggHholHRUYITEiJSovLi4uGB8zODMsNygtLisBCgoKDg0OGxAQGy8mICYvLS03LjcyNzUtLy0tLS0vLSswNi0tLy0rLS0rLS0tLzItLS0tMS0vLSstLS0tKy0tLf/AABEIANoA5wMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAwQFBgcCAQj/xABGEAACAAMFBQUEBwUHAwUAAAABAgADEQQSITFBBQZRYXETIjKBkQdSobEUQmJywdHwI1OCkqIzQ3OywtLhFSSzCBY0Y6P/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAgMEAQUG/8QAMREAAgECBAMGBQQDAAAAAAAAAAECAxEEEiExBUFRgZGh0eHwEyIycbEjQmHBFDNS/9oADAMBAAIRAxEAPwDcYIIIAIIoftD31n2GakuTLlNellzfvFsCQaKGFQKA566ZxSLT7VrbQeAV1QAA/wA4Y+RxEDqV+ZucEfOdu9oVvmZWiYn3So+SCIa07etUzx2qe3IzXp6XqQDVj6hmz1UVZlUcSQPnEZat6bDL8drs6ngZqV9K1j5gmd41bE8TifUx3LQe8B1r+AP6EDh9D2n2k7MTA2oMfsJMf4qpHxiLtPtdsC+FZ8z7qAD+pgYw64gzc/wrX5lY9qn2j5hfhRucAa7aPbPK/u7JMP33VfkGiMtHtltB8FllL952b5BYzbtk0ljzZifgQPhALTwVB/CD/mrAF1tHtX2i2Rkp92X/ALmMRlo392m2JtUwD7Koo9VURX1tTnIkfdFPkI4dmPiJ8z+cAPrRvBa38dqtDcjOmU9L1Ik9ib+W+zUCTy6D6k3vr5E94eREVug1YDz/AChVbKxFQGI4hSRnTOANg2J7YJLUW1SWln35ffXzHiHxi+bH2/ZrUK2eekziAe8OqnvDzEfMxsfHDqyLrwJqYUs0gK4uzAGrgVLlh0KLT0MAfU8EZX7LN4LVNtHYTZ7zJYlTDdmKLysjSwO9UsRSYczpGqQAQQQQAQQQQAQQQQAQQQQAQQQQAQQQQBi3t5JFpsjA0PZTKEYEUdcRGeSnEwUoA2q5B/u8H5DoKg3Y0b2/j9rYzxSd8DL/ADjKoAXmy6ZYj4jgD+qHSOSp4H0jmfNLC8xJuqcsCasgxND75J404mplZO7ExsRLljLNpjnGvC6OHHLnEZTjHctpUKlX6Fciiw4j1H5xw05feHx/KJHbmzXs4Um4LxOAlLhTm15uOsRX06b+8ccgxUdKCgAxPqeMIyUldHKlKVOWWW/voOexf93N/kIHr6+keheN0czMTloMddPwMR1IXlWZ2NFRmPJSdQNBzHrEisdi7rMlj7odj1xFNOOsAmoMmcnkqpx1qTTLTyglbHnsARLJDVpiMaKzEUrWt'),
-(7, 'Stuffed Animal', 'Large teddy bear', 800.00, '3.9', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAWcwBs8YdEeZTv6M6bcM_SYAVz-iLHBCadA&s'),
-(8, 'Toy Train', 'Electric toy train set', 15972.00, '4.2', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbcnqsJ6t6QC-Qwmp3aT6_D27epyNrj0Arpw&s'),
-(9, 'Doll', 'Fashion doll with accessories', 1199.00, '3.8', 'https://m.media-amazon.com/images/I/71lvPK1JixL._AC_UF1000,1000_QL80_.jpg'),
-(10, 'Play Kitchen', 'Childrens play kitchen set', 2800.00, '4.6', 'https://m.media-amazon.com/images/I/61+TVrElkSL._AC_UF1000,1000_QL80_.jpg'),
-(11, 'Action Playset', 'Adventure action playset', 2510.00, '4.1', 'https://images-cdn.ubuy.co.in/657948ac686ffc3b1d2e69bc-animal-planet-extreme-shark-adventure.jpg'),
-(12, 'Educational Toy', 'STEM learning kit', 699.00, '4.0', 'https://images-cdn.ubuy.co.in/633b24928425b07246253290-iq-builder-stem-learning-toys.jpg'),
-(13, 'Ride-On Toy', 'Kids ride-on car', 24900.00, '4.7', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSpTNKiBN9Yyb5DxVPzwJ--JSLsVg-RzmJdc7UDh0U8DK935yTQBvBSddXiQFWgA253QQ&usqp=CAU'),
-(14, 'Musical Toy', 'Toy musical keyboard', 849.00, '4.0', 'https://m.media-amazon.com/images/I/71KXVmVIULL.jpg'),
-(15, 'Art Set', 'Complete kids art set', 1899.00, '4.0', 'https://m.media-amazon.com/images/I/718SjzV5q9L._AC_UF1000,1000_QL80_.jpg');
+INSERT INTO `toys` (`id`, `name`, `description`, `price`, `ratings`, `images`, `a`) VALUES
+(1, 'Action Figure', 'Superhero action figure', 987.00, '4.2', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROJ7gTb2lWG1E9GtKpVm5s11AEkmR_vEPq9g&s', 1),
+(2, 'Dollhouse', 'Wooden dollhouse with furniture', 5900.00, '4.5', 'https://images-cdn.ubuy.co.in/6531a317617d2c45324fb71f-giant-bean-wooden-dollhouse-2-6-feet.jpg', 2),
+(3, 'Puzzle', '1000-piece jigsaw puzzle', 899.00, '4.0', 'https://www.alljigsawpuzzles.co.uk/cdn/shop/products/68df69ed-e863-4fdb-8f0a-eaed53f72386.jpg?v=1657722402', 3),
+(4, 'Board Game', 'Classic strategy board game', 1399.00, '4.1', 'https://m.media-amazon.com/images/I/71DpaXXN7wL._AC_UF1000,1000_QL80_.jpg', 4),
+(5, 'Lego Set', 'Building block lego set', 3300.00, '4.3', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvvJGpOEHbcVbKnxbGA9jK9-AWWECvokIn9A&s', 5),
+(6, 'RC Car', 'Remote control car', 2099.00, '4.0', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3sbTnNeubJDIwNZpjcKmiRlpgmEAV0KwvmQ&s', 6),
+(7, 'Stuffed Animal', 'Large teddy bear', 800.00, '3.9', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAWcwBs8YdEeZTv6M6bcM_SYAVz-iLHBCadA&s', 7),
+(8, 'Toy Train', 'Electric toy train set', 15972.00, '4.2', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbcnqsJ6t6QC-Qwmp3aT6_D27epyNrj0Arpw&s', 8),
+(9, 'Doll', 'Fashion doll with accessories', 1199.00, '3.8', 'https://m.media-amazon.com/images/I/71lvPK1JixL._AC_UF1000,1000_QL80_.jpg', 9),
+(10, 'Play Kitchen', 'Childrens play kitchen set', 2800.00, '4.6', 'https://m.media-amazon.com/images/I/61+TVrElkSL._AC_UF1000,1000_QL80_.jpg', 10),
+(11, 'Action Playset', 'Adventure action playset', 2510.00, '4.1', 'https://images-cdn.ubuy.co.in/657948ac686ffc3b1d2e69bc-animal-planet-extreme-shark-adventure.jpg', 11),
+(12, 'Educational Toy', 'STEM learning kit', 699.00, '4.0', 'https://images-cdn.ubuy.co.in/633b24928425b07246253290-iq-builder-stem-learning-toys.jpg', 12),
+(13, 'Ride-On Toy', 'Kids ride-on car', 24900.00, '4.7', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSpTNKiBN9Yyb5DxVPzwJ--JSLsVg-RzmJdc7UDh0U8DK935yTQBvBSddXiQFWgA253QQ&usqp=CAU', 13),
+(14, 'Musical Toy', 'Toy musical keyboard', 849.00, '4.0', 'https://m.media-amazon.com/images/I/71KXVmVIULL.jpg', 14),
+(15, 'Art Set', 'Complete kids art set', 1899.00, '4.0', 'https://m.media-amazon.com/images/I/718SjzV5q9L._AC_UF1000,1000_QL80_.jpg', 15);
 
 -- --------------------------------------------------------
 
@@ -545,7 +559,7 @@ INSERT INTO `watches` (`id`, `name`, `description`, `price`, `ratings`, `images`
 --
 DROP TABLE IF EXISTS `all_products`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `all_products`  AS SELECT 'appliances' AS `category`, `appliances`.`id` AS `id`, `appliances`.`name` AS `name`, `appliances`.`description` AS `description`, `appliances`.`price` AS `price`, `appliances`.`ratings` AS `ratings`, `appliances`.`images` AS `images` FROM `appliances`union all select 'clothes' AS `category`,`clothes`.`id` AS `id`,`clothes`.`name` AS `name`,`clothes`.`description` AS `description`,`clothes`.`price` AS `price`,`clothes`.`ratings` AS `ratings`,`clothes`.`images` AS `images` from `clothes` union all select 'electronics' AS `category`,`electronics`.`id` AS `id`,`electronics`.`name` AS `name`,`electronics`.`description` AS `description`,`electronics`.`price` AS `price`,`electronics`.`ratings` AS `ratings`,`electronics`.`images` AS `images` from `electronics` union all select 'footwears' AS `category`,`footwears`.`id` AS `id`,`footwears`.`name` AS `name`,`footwears`.`description` AS `description`,`footwears`.`price` AS `price`,`footwears`.`ratings` AS `ratings`,`footwears`.`images` AS `images` from `footwears` union all select 'furnitures' AS `category`,`furnituers`.`id` AS `id`,`furnituers`.`name` AS `name`,`furnituers`.`description` AS `description`,`furnituers`.`price` AS `price`,`furnituers`.`ratings` AS `ratings`,`furnituers`.`images` AS `images` from `furnituers` union all select 'groceries' AS `category`,`groceries`.`id` AS `id`,`groceries`.`name` AS `name`,`groceries`.`description` AS `description`,`groceries`.`price` AS `price`,`groceries`.`ratings` AS `ratings`,`groceries`.`images` AS `images` from `groceries` union all select 'mobiles' AS `category`,`mobiles`.`id` AS `id`,`mobiles`.`name` AS `name`,`mobiles`.`description` AS `description`,`mobiles`.`price` AS `price`,`mobiles`.`ratings` AS `ratings`,`mobiles`.`images` AS `images` from `mobiles` union all select 'sports' AS `category`,`sports`.`id` AS `id`,`sports`.`name` AS `name`,`sports`.`description` AS `description`,`sports`.`price` AS `price`,`sports`.`ratings` AS `ratings`,`sports`.`images` AS `images` from `sports` union all select 'toys' AS `category`,`toys`.`id` AS `id`,`toys`.`name` AS `name`,`toys`.`description` AS `description`,`toys`.`price` AS `price`,`toys`.`ratings` AS `ratings`,`toys`.`images` AS `images` from `toys` union all select 'watches' AS `category`,`watches`.`id` AS `id`,`watches`.`name` AS `name`,`watches`.`description` AS `description`,`watches`.`price` AS `price`,`watches`.`ratings` AS `ratings`,`watches`.`images` AS `images` from `watches`  ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `all_products`  AS SELECT 'appliances' AS `category`, `appliances`.`id` AS `id`, `appliances`.`name` AS `name`, `appliances`.`description` AS `description`, `appliances`.`price` AS `price`, `appliances`.`ratings` AS `ratings`, `appliances`.`images` AS `images` FROM `appliances`union all select 'clothes' AS `category`,`clothes`.`id` AS `id`,`clothes`.`name` AS `name`,`clothes`.`description` AS `description`,`clothes`.`price` AS `price`,`clothes`.`ratings` AS `ratings`,`clothes`.`images` AS `images` from `clothes` union all select 'electronics' AS `category`,`electronics`.`id` AS `id`,`electronics`.`name` AS `name`,`electronics`.`description` AS `description`,`electronics`.`price` AS `price`,`electronics`.`ratings` AS `ratings`,`electronics`.`images` AS `images` from `electronics` union all select 'footwears' AS `category`,`footwears`.`id` AS `id`,`footwears`.`name` AS `name`,`footwears`.`description` AS `description`,`footwears`.`price` AS `price`,`footwears`.`ratings` AS `ratings`,`footwears`.`images` AS `images` from `footwears` union all select 'furnitures' AS `category`,`furnitures`.`id` AS `id`,`furnitures`.`name` AS `name`,`furnitures`.`description` AS `description`,`furnitures`.`price` AS `price`,`furnitures`.`ratings` AS `ratings`,`furnitures`.`images` AS `images` from `furnitures` union all select 'groceries' AS `category`,`groceries`.`id` AS `id`,`groceries`.`name` AS `name`,`groceries`.`description` AS `description`,`groceries`.`price` AS `price`,`groceries`.`ratings` AS `ratings`,`groceries`.`images` AS `images` from `groceries` union all select 'mobiles' AS `category`,`mobiles`.`id` AS `id`,`mobiles`.`name` AS `name`,`mobiles`.`description` AS `description`,`mobiles`.`price` AS `price`,`mobiles`.`ratings` AS `ratings`,`mobiles`.`images` AS `images` from `mobiles` union all select 'sports' AS `category`,`sports`.`id` AS `id`,`sports`.`name` AS `name`,`sports`.`description` AS `description`,`sports`.`price` AS `price`,`sports`.`ratings` AS `ratings`,`sports`.`images` AS `images` from `sports` union all select 'toys' AS `category`,`toys`.`id` AS `id`,`toys`.`name` AS `name`,`toys`.`description` AS `description`,`toys`.`price` AS `price`,`toys`.`ratings` AS `ratings`,`toys`.`images` AS `images` from `toys` union all select 'watches' AS `category`,`watches`.`id` AS `id`,`watches`.`name` AS `name`,`watches`.`description` AS `description`,`watches`.`price` AS `price`,`watches`.`ratings` AS `ratings`,`watches`.`images` AS `images` from `watches`  ;
 
 --
 -- Indexes for dumped tables
@@ -612,86 +626,32 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `mobiles`
---
-ALTER TABLE `mobiles`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `signup`
---
-ALTER TABLE `signup`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `sports`
---
-ALTER TABLE `sports`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `top_products`
 --
 ALTER TABLE `top_products`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`a`);
 
 --
 -- Indexes for table `toys`
 --
 ALTER TABLE `toys`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `watches`
---
-ALTER TABLE `watches`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`a`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `checkout`
---
-ALTER TABLE `checkout`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `contact`
---
-ALTER TABLE `contact`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `featuredcategories`
---
-ALTER TABLE `featuredcategories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `login`
---
-ALTER TABLE `login`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `signup`
---
-ALTER TABLE `signup`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `sports`
---
-ALTER TABLE `sports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
 -- AUTO_INCREMENT for table `top_products`
 --
 ALTER TABLE `top_products`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `a` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `toys`
+--
+ALTER TABLE `toys`
+  MODIFY `a` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
