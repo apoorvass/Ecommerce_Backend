@@ -199,22 +199,40 @@ app.post('/contact', (req, res) => {
 );
 
 app.post('/checkout', (req, res) => {
-  let {name, email, country, city, pincode, mobile, address, voucher} = req.body;
-  let query = `INSERT INTO checkout(name, email, country, city, pincode, mobile, address, voucher) VALUES ('${name}','${email}','${country}', '${city}','${pincode}','${mobile}','${address}','${voucher}')`;
+  let {name, email, country, city, pincode, mobile, address, voucher , category , id , quantity , price} = req.body;
+  let query = `INSERT INTO checkout (name, email, country, city, pincode, mobile, address, voucher , product_category, product_id, quantity , price) VALUES ('${name}','${email}','${country}', '${city}','${pincode}','${mobile}','${address}','${voucher}' , ' ${category}' , '${id}' , '${quantity}' , '${price}' )`;
   console.log(query);
     db.query(query, (err, results) => {
-   
+
       if (err) {
         res.status(500).send('Internal Server Error');
         return;
       }
-
       console.log(results)
       res.json(results);
       
     });
   }
 );
+
+
+app.post('/updatequantity', (req, res) => {
+  let {category , id , quantity } = req.body;
+  let query = `UPDATE ${category} SET quantity = ${quantity} WHERE id = ${id}`;
+  console.log(query);
+    db.query(query, (err, results) => {
+      if (err) {
+        res.status(500).send('Internal Server Error');
+        return;
+      }
+      console.log(results)
+      res.json(results);
+      
+    });
+  }
+);
+
+
 
 // Start the server
 app.listen(port, () => {
