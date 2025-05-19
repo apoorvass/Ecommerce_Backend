@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2024 at 07:14 PM
+-- Generation Time: May 19, 2025 at 08:16 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -106,7 +106,9 @@ INSERT INTO `checkout` (`id`, `name`, `email`, `country`, `city`, `pincode`, `mo
 (3, 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', 0, 'undefined', 'undefined', ' clothes', 3, 3, 6326),
 (4, 'xyz', 'votiw84767@stikezz.com', 'undefined', 'undefined', 'undefined', 0, 'undefined', 'undefined', ' clothes', 3, 5, 10524),
 (5, 'anusha', 'votiw84767@stikezz.com', 'inida', 'gjhf', '45645', 21354656, 'ddgfdfgf', 'undefined', ' clothes', 4, 5, 4749),
-(6, 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', 0, 'undefined', 'undefined', ' clothes', 15, 3, 3810);
+(6, 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', 0, 'undefined', 'undefined', ' clothes', 15, 3, 3810),
+(7, 'undefined', 'undefined', 'undefined', 'undefined', 'undefined', 0, 'undefined', 'undefined', ' furnitures', 2, 11, 288780),
+(8, 'a', 'doreni5686@inpsur.com', 'a', 'a', '1234', 1234, 'abcd', 'undefined', ' furnitures', 1, 15, 126064);
 
 -- --------------------------------------------------------
 
@@ -283,8 +285,8 @@ CREATE TABLE `furnitures` (
 --
 
 INSERT INTO `furnitures` (`id`, `name`, `description`, `price`, `ratings`, `images`, `quantity`) VALUES
-(1, 'Sofa Set', 'Comfortable 3-seater sofa', 7999.00, '4.5', 'https://www.godrejinterio.com/imagestore/B2C/56101502SD01789/56101502SD01789_01_1500x1500.jpg', 15),
-(2, 'Dining Table', 'Wooden dining table with 6 chairs', 25000.00, '4.7', 'https://www.at-home.co.in/cdn/shop/products/Vera6SchairsLS.jpg?v=1664774549', 33),
+(1, 'Sofa Set', 'Comfortable 3-seater sofa', 7999.00, '4.5', 'https://www.godrejinterio.com/imagestore/B2C/56101502SD01789/56101502SD01789_01_1500x1500.jpg', 0),
+(2, 'Dining Table', 'Wooden dining table with 6 chairs', 25000.00, '4.7', 'https://www.at-home.co.in/cdn/shop/products/Vera6SchairsLS.jpg?v=1664774549', 22),
 (3, 'Office Chair', 'Ergonomic office chair', 3999.00, '4.3', 'https://images-cdn.ubuy.co.in/65ab94cdb1958655d77deb9e-mainstays-ergonomic-mesh-back-task.jpg', 0),
 (4, 'Coffee Table', 'Modern glass coffee table', 4700.00, '4.2', 'https://m.media-amazon.com/images/I/91Bttn2sHzL._AC_UF894,1000_QL80_.jpg', 63),
 (5, 'Bookshelf', '5-tier wooden bookshelf', 4899.00, '4.6', 'https://www.jiomart.com/images/product/original/rvbxlxejmx/jeffry-engineered-wood-5-tier-floor-standing-bookcase-bookshelf-with-5-shelves-in-living-room-office-white-d-i-y-product-images-orvbxlxejmx-p602966306-0-202307052216.jpg?im=Resize=(1000,1000)', 20),
@@ -339,25 +341,6 @@ INSERT INTO `groceries` (`id`, `name`, `description`, `price`, `ratings`, `image
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login`
---
-
-CREATE TABLE `login` (
-  `id` int(2) NOT NULL,
-  `email` varchar(500) NOT NULL,
-  `password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `login`
---
-
-INSERT INTO `login` (`id`, `email`, `password`) VALUES
-(1, 'aa', 'aaa');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `mobiles`
 --
 
@@ -376,7 +359,7 @@ CREATE TABLE `mobiles` (
 --
 
 INSERT INTO `mobiles` (`id`, `name`, `description`, `price`, `ratings`, `images`, `quantity`) VALUES
-(1, 'iPhone 12', 'Apple iPhone 12 with 64GB storage', 39900.00, '4.5', 'https://images-cdn.ubuy.co.in/662d6be0361287112a789e58-pre-owned-apple-iphone-12-carrier.jpg', 45),
+(1, 'iPhone 12', 'The iPhone 12 is a sleek and powerful smartphone featuring a 6.1-inch Super Retina XDR display with Ceramic Shield for enhanced durability. Powered by the A14 Bionic chip, it ensures fast performance and energy efficiency. The dual-camera system, with 12MP ultra-wide and wide lenses, excels in low light with Night mode and Smart HDR 3, and supports 4K Dolby Vision HDR recording. The device also offers 5G connectivity for faster internet speeds. Environmentally friendly, the iPhone 12 uses recycled materials and features MagSafe for easy accessory attachment. Running on iOS, it provides a secure, smooth user experience.', 39900.00, '4.5', 'https://images-cdn.ubuy.co.in/662d6be0361287112a789e58-pre-owned-apple-iphone-12-carrier.jpg', 45),
 (2, 'Samsung Galaxy S21', 'Samsung Galaxy S21 with 128GB storage', 28000.00, '4.3', 'https://m.media-amazon.com/images/I/91ZgUXOWF4L._AC_UF1000,1000_QL80_.jpg', 92),
 (3, 'Google Pixel 6', 'Google Pixel 6 with 128GB storage', 29000.00, '4.2', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfP1o_WfMwZ6SvG_CCKpua8mW_fopOO26jNg&s', 13),
 (4, 'OnePlus 9', 'OnePlus 9 with 256GB storage', 15500.00, '4.4', 'https://m.media-amazon.com/images/I/61HrWjOTJiL._AC_UF1000,1000_QL80_.jpg', 78),
@@ -391,33 +374,6 @@ INSERT INTO `mobiles` (`id`, `name`, `description`, `price`, `ratings`, `images`
 (13, 'Realme GT', 'Realme GT with 256GB storage', 18000.00, '4.1', 'https://m.media-amazon.com/images/I/71ftthp966L.jpg', 78),
 (14, 'Vivo X60', 'Vivo X60 with 256GB storage', 20400.00, '4.3', 'https://5.imimg.com/data5/ECOM/Default/2023/12/372078755/VN/FY/OJ/47699750/8kpqrglwk2-34cf3714-1a32-4be9-a4cc-c623e7fc0d41-500x500.jpg', 33),
 (15, 'Lenovo Legion Duel 2', 'Lenovo Legion Duel 2 with 512GB storage', 72999.00, '4.8', 'https://www.gizmochina.com/wp-content/uploads/2021/04/cats-7.jpg', 21);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `signup`
---
-
-CREATE TABLE `signup` (
-  `id` int(2) NOT NULL,
-  `fullname` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `signup`
---
-
-INSERT INTO `signup` (`id`, `fullname`, `email`, `password`) VALUES
-(1, 'a', 'a', 'a'),
-(2, 'a', 'aa', 'aaa'),
-(3, 'anusha', 'anusha@gmail.com', 'anu@123'),
-(4, 'rakshita', 'rakshitaashoknadiger@gmail.com', 'rak123'),
-(1, 'a', 'a', 'a'),
-(2, 'a', 'aa', 'aaa'),
-(3, 'anusha', 'anusha@gmail.com', 'anu@123'),
-(4, 'rakshita', 'rakshitaashoknadiger@gmail.com', 'rak123');
 
 -- --------------------------------------------------------
 
@@ -527,6 +483,33 @@ INSERT INTO `toys` (`id`, `name`, `description`, `price`, `ratings`, `images`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(2) NOT NULL,
+  `fullname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `fullname`, `email`, `password`) VALUES
+(1, 'a', 'a', 'a'),
+(2, 'a', 'aa', 'aaa'),
+(3, 'anusha', 'anusha@gmail.com', 'anu@123'),
+(4, 'rakshita', 'rakshitaashoknadiger@gmail.com', 'rak123'),
+(1, 'a', 'a', 'a'),
+(2, 'a', 'aa', 'aaa'),
+(3, 'anusha', 'anusha@gmail.com', 'anu@123'),
+(4, 'rakshita', 'rakshitaashoknadiger@gmail.com', 'rak123');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `watches`
 --
 
@@ -629,12 +612,6 @@ ALTER TABLE `groceries`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `mobiles`
 --
 ALTER TABLE `mobiles`
@@ -672,7 +649,7 @@ ALTER TABLE `watches`
 -- AUTO_INCREMENT for table `checkout`
 --
 ALTER TABLE `checkout`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `mobiles`
